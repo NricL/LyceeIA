@@ -928,7 +928,7 @@ button{font-family:inherit}
       <li><strong>3. OBJECTIF</strong> : "Je veux convaincre / résumer / corriger…"</li>
       <li><strong>4. FORMAT</strong> : "En 200 mots / liste à puces / ton fun…"</li>
     </ul>
-    <p style="margin-top:14px;color:var(--gold);font-weight:600">💥 Maintenant à vous. Donnez-moi une mission débile, on construit le prompt ensemble au tableau.</p>
+    <p style="margin-top:14px;color:var(--gold);font-weight:600">💥 Maintenant à vous. Donnez-moi une mission, même surprenante, on construit le prompt ensemble au tableau.</p>
   </div>
 </section>
 
@@ -1094,7 +1094,7 @@ button{font-family:inherit}
 
   <div style="font-size:.85rem;letter-spacing:3px;color:var(--blue2);margin-bottom:14px;font-weight:700">LES 5 C : LES COMPÉTENCES CLÉS</div>
   <div class="jobs-grid" style="margin-bottom:36px">
-    <div class="job-card"><div class="job-emoji">🧐</div><div class="job-name">Critique</div><div class="job-desc"><strong style="color:var(--gold)">Esprit critique.</strong> Tout ce que l'IA te sort, tu doutes, tu vérifies, tu recoupes. Pas de gobage.</div></div>
+    <div class="job-card"><div class="job-emoji">🧐</div><div class="job-name">Critique</div><div class="job-desc"><strong style="color:var(--gold)">Esprit critique.</strong> Tout ce que l'IA te sort, tu doutes, tu vérifies, tu recoupes. Ne crois pas tout sur parole.</div></div>
     <div class="job-card"><div class="job-emoji">🎨</div><div class="job-name">Créativité</div><div class="job-desc"><strong style="color:var(--gold)">Créativité.</strong> L'IA imite, elle ne crée pas. C'est toi qui apportes l'angle, l'idée folle, le truc que personne n'a vu.</div></div>
     <div class="job-card"><div class="job-emoji">🗣️</div><div class="job-name">Communication</div><div class="job-desc"><strong style="color:var(--gold)">Bien communiquer.</strong> Savoir formuler une question, expliquer clairement, écouter. C'est ça un bon prompt, et un bon humain.</div></div>
     <div class="job-card"><div class="job-emoji">🤝</div><div class="job-name">Collaboration</div><div class="job-desc"><strong style="color:var(--gold)">Bosser ensemble.</strong> Avec d'autres humains et avec l'IA. Savoir déléguer ce qu'elle fait mieux, garder ce qui est à toi.</div></div>
@@ -1326,22 +1326,22 @@ const predictTree = {
       '':[{w:'c\'est',p:30},{w:'j\'ai',p:25},{w:'le',p:18},{w:'t\'as',p:15},{w:'mais',p:12}],
       'c\'est':[{w:'trop',p:35},{w:'pas',p:25},{w:'chaud',p:18},{w:'lui',p:12},{w:'vrai',p:10}],
       'c\'est|trop':[{w:'drôle',p:42},{w:'fort',p:25},{w:'bizarre',p:15},{w:'gênant',p:12},{w:'long',p:6}],
-      'c\'est|trop|drôle':[{w:'.',p:68},{w:'wallah',p:18},{w:'frère',p:8},{w:'sérieux',p:6}],
+      'c\'est|trop|drôle':[{w:'.',p:68},{w:'sérieux',p:18},{w:'frère',p:8},{w:'sérieux',p:6}],
       'c\'est|pas':[{w:'possible',p:42},{w:'vrai',p:28},{w:'grave',p:15},{w:'lui',p:10},{w:'son',p:5}],
       'c\'est|pas|possible':[{w:'.',p:72},{w:'ça',p:18},{w:'wesh',p:7},{w:'mec',p:3}],
       'j\'ai':[{w:'cru',p:30},{w:'ri',p:28},{w:'pas',p:20},{w:'failli',p:14},{w:'jamais',p:8}],
       'j\'ai|cru':[{w:'mourir',p:40},{w:'que',p:30},{w:'crever',p:15},{w:'tomber',p:10},{w:'rêver',p:5}],
-      'j\'ai|cru|mourir':[{w:'.',p:82},{w:'wallah',p:12},{w:'frère',p:4},{w:'sérieux',p:2}],
+      'j\'ai|cru|mourir':[{w:'.',p:82},{w:'sérieux',p:12},{w:'frère',p:4},{w:'sérieux',p:2}],
       'j\'ai|ri':[{w:'pendant',p:38},{w:'tellement',p:32},{w:'comme',p:15},{w:'toute',p:10},{w:'à',p:5}],
       'j\'ai|ri|tellement':[{w:'fort',p:45},{w:'que',p:38},{w:'longtemps',p:12},{w:'.',p:5}],
       'j\'ai|ri|tellement|que':[{w:'j\'en',p:48},{w:'j\'ai',p:30},{w:'ma',p:12},{w:'mes',p:6},{w:'tout',p:4}],
       'j\'ai|ri|tellement|que|j\'en':[{w:'ai',p:65},{w:'pouvais',p:25},{w:'peux',p:10}],
       't\'as':[{w:'vu',p:40},{w:'cru',p:25},{w:'raison',p:18},{w:'fait',p:10},{w:'compris',p:7}],
       't\'as|vu':[{w:'ça',p:48},{w:'sa',p:22},{w:'la',p:18},{w:'le',p:8},{w:'comment',p:4}],
-      't\'as|vu|ça':[{w:'?',p:62},{w:'.',p:25},{w:'wallah',p:8},{w:'mec',p:5}],
+      't\'as|vu|ça':[{w:'?',p:62},{w:'.',p:25},{w:'sérieux',p:8},{w:'mec',p:5}],
       'le':[{w:'gars',p:32},{w:'mec',p:28},{w:'truc',p:20},{w:'prof',p:12},{w:'mot',p:8}],
       'le|gars':[{w:'il',p:45},{w:'a',p:25},{w:'est',p:18},{w:'sort',p:8},{w:'me',p:4}],
-      'mais':[{w:'sérieux',p:35},{w:'wallah',p:25},{w:'genre',p:18},{w:'pourquoi',p:12},{w:'jure',p:10}]
+      'mais':[{w:'sérieux',p:35},{w:'sérieux',p:25},{w:'genre',p:18},{w:'pourquoi',p:12},{w:'jure',p:10}]
     }
   },
   'prof':{
