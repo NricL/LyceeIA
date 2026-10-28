@@ -50,5 +50,7 @@ python .\package_site.py --export ..\lycee-ia-atelier-autonome.html
 L'export refuse d'écraser un fichier existant : choisir un autre nom si besoin.
 Le logo officiel embarqué provient de
 https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png ; il n'est pas redessiné.
-Les guides suivent le thème clair/sombre du système, sans modifier l'identité
-visuelle sombre de la présentation.
+Les guides reprennent la charte de la présentation : fond bleu nuit, cartes
+sombres, titres en dégradé et accents bleus, roses et dorés. Cette présentation
+reste identique quel que soit le thème du système. L'impression conserve un
+fond blanc et du texte sombre pour une lecture sur papier ou en PDF.

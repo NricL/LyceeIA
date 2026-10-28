@@ -868,6 +868,93 @@ button:focus-visible, a:focus-visible, [role="button"]:focus-visible, textarea:f
 .reflection-line { display:block; min-height:40px; border-bottom:1px solid var(--cp-border-strong); }
 .guide-footer { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid var(--cp-border); padding-top:20px; margin-top:28px; color:var(--cp-text-soft); font-size:.8rem; }
 [hidden] { display:none!important; }
+@media screen {
+  :root, :root[data-theme] {
+    color-scheme:dark;
+    --cp-bg:var(--bg);
+    --cp-bg-elevated:var(--bg2);
+    --cp-surface:var(--card);
+    --cp-surface-soft:var(--bg2);
+    --cp-border:color-mix(in srgb, var(--txt) 12%, transparent);
+    --cp-border-strong:color-mix(in srgb, var(--txt) 28%, transparent);
+    --cp-text:var(--txt);
+    --cp-text-muted:var(--txt2);
+    --cp-text-soft:var(--txt2);
+    --cp-accent:var(--blue2);
+    --cp-accent-hover:var(--blue);
+    --cp-accent-soft:color-mix(in srgb, var(--blue2) 12%, var(--bg2));
+    --cp-accent-fg:var(--txt);
+    --cp-link:var(--blue2);
+    --cp-shadow:var(--shadow);
+    --cp-overlay:color-mix(in srgb, var(--bg) 88%, transparent);
+    --cp-guide-pink:var(--pink);
+    --cp-guide-gold:var(--gold);
+    --cp-guide-selected:var(--blue);
+    --cp-guide-card-hover:var(--card-hi);
+    --cp-guide-radius:var(--r);
+  }
+  .guide-trigger {
+    background:var(--cp-surface);
+    border-color:var(--cp-border-strong);
+    transition:background .2s, border-color .2s;
+  }
+  .guide-trigger:hover {
+    background:var(--cp-guide-selected);
+    color:var(--cp-text);
+    border-color:var(--cp-guide-selected);
+  }
+  .guide-dialog {
+    border-radius:var(--cp-guide-radius);
+    font-family:'Segoe UI Variable','Segoe UI',Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  .guide-shell { border-top:3px solid var(--cp-accent); }
+  .guide-heading { padding-top:8px; padding-bottom:24px; }
+  .guide-heading h2 {
+    font-size:clamp(1.75rem,4vw,2.7rem);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-1px;
+    background:linear-gradient(135deg,var(--cp-text),var(--cp-accent),var(--cp-guide-pink));
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+  }
+  .guide-kicker { letter-spacing:3px; }
+  .guide-switch { gap:10px; }
+  .guide-dialog button, .guide-dialog .guide-link {
+    font-family:inherit;
+    transition:background .2s, border-color .2s;
+  }
+  .guide-dialog button:hover, .guide-dialog .guide-link:hover {
+    background:var(--cp-guide-card-hover);
+    border-color:var(--cp-accent);
+  }
+  .guide-dialog button[aria-pressed="true"], .guide-dialog .primary {
+    background:var(--cp-guide-selected);
+    border-color:var(--cp-guide-selected);
+    color:var(--cp-text);
+  }
+  .guide-dialog button[aria-pressed="true"]:hover { background:var(--cp-accent-hover); }
+  .guide-actions { padding-bottom:20px; border-bottom:1px solid var(--cp-border); }
+  .guide-dialog h3 { font-weight:800; letter-spacing:-.3px; }
+  .guide-dialog h4 { color:var(--cp-guide-gold); }
+  .guide-intro { font-size:1.05rem; }
+  .guide-card, .guide-step { border-radius:var(--cp-guide-radius); }
+  .guide-step dd, .guide-card li, .guide-step details p { color:var(--cp-text-muted); }
+  .guide-step dt { color:var(--cp-accent); font-size:.85rem; }
+  .guide-step.current-step { border-left:3px solid var(--cp-accent); }
+  .guide-time { color:var(--cp-guide-gold); font-family:Consolas,"Courier New",monospace; }
+  .guide-timeline strong { color:var(--cp-guide-gold); }
+  .guide-callout { background:var(--cp-accent-soft); color:var(--cp-text-muted); }
+  .guide-callout strong { color:var(--cp-guide-gold); }
+  .guide-prompt { border-color:var(--cp-border); margin-bottom:12px; }
+  .guide-card button[data-copy-prompt] {
+    background:linear-gradient(135deg,var(--cp-guide-selected),var(--cp-guide-pink));
+    color:var(--cp-text);
+    border-color:var(--cp-guide-selected);
+  }
+  .guide-card button[data-copy-prompt]:hover { border-color:var(--cp-guide-pink); }
+}
 @media(max-width:1100px) {
   .top .energy { display:none; }
   .top-tools { margin-right:0; }
