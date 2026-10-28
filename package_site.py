@@ -28,14 +28,20 @@ def package():
         parser.error(f"Export already exists: {args.export}")
 
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    logo = base64.b64encode((ROOT / "microsoft-logo.png").read_bytes()).decode("ascii")
-    html, count = re.subn(
-        r'(<img src=")(?:microsoft-logo\.png|data:image/png;base64,[^"]+)(" alt="Microsoft")',
-        lambda match: match[1] + "data:image/png;base64," + logo + match[2],
-        html,
-    )
-    if count != 2:
-        raise ValueError(f"Expected two Microsoft signatures, found {count}")
+    assets = {
+        "symbol": ("microsoft-symbol.png", 1),
+        "negative": ("microsoft-logo-negative.png", 2),
+        "positive": ("microsoft-logo.png", 1),
+    }
+    for asset, (filename, expected) in assets.items():
+        logo = base64.b64encode((ROOT / filename).read_bytes()).decode("ascii")
+        html, count = re.subn(
+            rf'(<img src=")[^"]+("[^>]*data-brand-asset="{asset}"[^>]*>)',
+            lambda match: match[1] + "data:image/png;base64," + logo + match[2],
+            html,
+        )
+        if count != expected:
+            raise ValueError(f"Expected {expected} {asset} artwork(s), found {count}")
     ResourceCheck().feed(html)
     if re.search(r'@import\b|url\(\s*["\']?https?://', html):
         raise ValueError("External CSS resource found")

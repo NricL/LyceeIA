@@ -12,6 +12,7 @@ class Elements(HTMLParser):
         self.ids = []
         self.guide_minutes = []
         self.logos = []
+        self.brand_assets = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -21,6 +22,7 @@ class Elements(HTMLParser):
             self.guide_minutes.append(int(attrs["data-minutes"]))
         if tag == "img" and attrs.get("alt") == "Microsoft":
             self.logos.append(attrs.get("src", ""))
+            self.brand_assets.append(attrs.get("data-brand-asset"))
 
 
 class WorkshopTest(unittest.TestCase):
@@ -33,8 +35,17 @@ class WorkshopTest(unittest.TestCase):
     def test_resources_are_embedded(self):
         ResourceCheck().feed(self.html)
         self.assertNotRegex(self.html, r'@import\b|url\(\s*["\']?https?://')
-        self.assertEqual(len(self.elements.logos), 2)
+        self.assertEqual(len(self.elements.logos), 4)
         self.assertTrue(all(src.startswith("data:image/png;base64,") for src in self.elements.logos))
+        self.assertEqual(self.elements.brand_assets, ["symbol", "negative", "negative", "positive"])
+
+    def test_branding_placement(self):
+        top = self.html.split('<div class="top">', 1)[1].split('<!-- ===== ACT 0', 1)[0]
+        self.assertEqual(top.count('data-brand-asset="symbol"'), 1)
+        self.assertNotIn('data-brand-asset="negative"', top)
+        final = self.html.split('<section class="act" data-act="7">', 1)[1].split('</section>', 1)[0]
+        self.assertIn('class="microsoft-end-signature"', final)
+        self.assertIn('data-brand-asset="negative"', final)
 
     def test_unique_ids(self):
         self.assertEqual(len(self.elements.ids), len(set(self.elements.ids)))

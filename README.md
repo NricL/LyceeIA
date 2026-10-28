@@ -48,8 +48,15 @@ python .\package_site.py --export ..\lycee-ia-atelier-autonome.html
 ```
 
 L'export refuse d'écraser un fichier existant : choisir un autre nom si besoin.
-Le logo officiel embarqué provient de
-https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png ; il n'est pas redessiné.
+Les marques Microsoft sont embarquées comme images officielles, sans filtre,
+recoloration, déformation ni reconstruction typographique. Le symbole seul
+figure en haut à gauche avec une zone libre de 24 px sur chaque côté ; le logo
+complet est isolé en fin de parcours, en couleur avec le mot Microsoft blanc
+sur fond sombre. Les guides utilisent cette même version à l'écran et la
+variante à mot gris sur papier. Le logo positif provient de
+https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png.
+Tout nouvel usage du symbole seul reste soumis à validation par Microsoft Brand
+Studio ; la mise en page ne constitue pas cette validation.
 Les guides reprennent la charte de la présentation : fond bleu nuit, cartes
 sombres, titres en dégradé et accents bleus, roses et dorés. Cette présentation
 reste identique quel que soit le thème du système. L'impression conserve un
